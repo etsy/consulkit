@@ -1,0 +1,52 @@
+# frozen_string_literal: true
+
+module Consulkit
+  class Error < StandardError
+    # Returns the appropriate Consulkit::Error subclass based on the status and
+    # response message, or nil if the response is not an error.
+    #
+    # @param [Hash] response the HTTP response
+    #
+    # @return Consulkit::Error
+    def self.from_response(response)
+      return unless (error_class = error_class_for(response))
+
+      error_class.new(response)
+    end
+
+    # @private
+    def self.error_class_for(response)
+      status = response[:status].to_i
+      body   = response[:body].to_s
+
+      case status
+      when 400 then BadRequest
+      when 403 then error_class_for_http403(body)
+      when 404 then NotFound
+
+      when 400..499 then Client
+      when 500..599 then Server
+      end
+    end
+
+    # @private
+    def self.error_class_for_http403(body)
+      case body
+      when /acl not found/i then ACLNotFound
+      else Forbidden
+      end
+    end
+
+    class Client < Error; end
+
+    class BadRequest < Client; end
+
+    class Forbidden < Client; end
+
+    class ACLNotFound < Forbidden; end
+
+    class NotFound < Client; end
+
+    class Server < Error; end
+  end
+end
