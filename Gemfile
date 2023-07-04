@@ -10,6 +10,8 @@ gem 'rake', '~> 13.0'
 
 group :test do
   gem 'rspec', '~> 3.0'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

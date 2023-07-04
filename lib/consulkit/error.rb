@@ -10,6 +10,18 @@ module Consulkit
       super(error_message)
     end
 
+    # Returns the appropriate Consulkit::Error subclass based on the status and
+    # response message, or nil if the response is not an error.
+    #
+    # @param [Hash] response the HTTP response
+    #
+    # @return Consulkit::Error
+    def self.from_response(response)
+      return unless (error_class = error_class_for(response))
+
+      error_class.new(response)
+    end
+
     def response_status
       @response.status
     end
@@ -44,18 +56,6 @@ module Consulkit
     class NotFound < Client; end
 
     class Server < Error; end
-
-    # Returns the appropriate Consulkit::Error subclass based on the status and
-    # response message, or nil if the response is not an error.
-    #
-    # @param [Hash] response the HTTP response
-    #
-    # @return Consulkit::Error
-    private_class_method def self.from_response(response)
-      return unless (error_class = error_class_for(response))
-
-      error_class.new(response)
-    end
 
     # @private
     private_class_method def self.error_class_for(response)

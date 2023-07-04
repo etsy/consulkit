@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:8500/v1/kv/foo?raw=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '3'
+      Content-Security-Policy:
+      - sandbox
+      Content-Type:
+      - text/plain
+      Vary:
+      - Accept-Encoding
+      X-Consul-Default-Acl-Policy:
+      - allow
+      X-Consul-Index:
+      - '3914'
+      X-Consul-Knownleader:
+      - 'true'
+      X-Consul-Lastcontact:
+      - '0'
+      X-Consul-Query-Backend:
+      - blocking-query
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Tue, 04 Jul 2023 20:28:42 GMT
+    body:
+      encoding: UTF-8
+      string: bar
+  recorded_at: Tue, 04 Jul 2023 20:28:42 GMT
+recorded_with: VCR 6.2.0

@@ -7,8 +7,21 @@ Metrics/MethodLength:
 Layout/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  AllowedMethods: ['describe']
+
 Layout/EmptyLinesAroundClassBody:
   EnforcedStyle: empty_lines_except_namespace
 
 Layout/EmptyLinesAroundModuleBody:
   EnforcedStyle: empty_lines_except_namespace
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
