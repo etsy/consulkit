@@ -160,8 +160,10 @@ module Consulkit
 
     # Parses the list of claimed semaphore holders.
     def parse_holders(value)
-      Set.new(JSON.parse(Base64.decode64(value)))
-    rescue JSON::ParseError, ArgumentError
+      Set.new(JSON.parse(value))
+    rescue JSON::ParserError, ArgumentError => e
+      @logger.warn("found invalid JSON or a non-array `holders` value: #{e}")
+
       Set[]
     end
 
