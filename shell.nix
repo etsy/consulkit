@@ -1,18 +1,15 @@
 with (import <nixpkgs> {});
-let
-  # gems = bundlerEnv {
-  #   name   = "consulkit";
-  #   gemdir = ./.;
 
-  #   inherit ruby;
-  # };
-in stdenv.mkDerivation {
+mkShell {
   name = "consulkit";
 
   buildInputs = [
-    #gems
     ruby
     bundler
     rubocop
   ];
+
+  shellHook = ''
+    bin/setup
+  '';
 }
