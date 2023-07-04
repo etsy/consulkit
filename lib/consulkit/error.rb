@@ -38,10 +38,7 @@ module Consulkit
 
     def error_message
       @response.instance_eval do
-        msg = "#{method.to_s.upcase} #{url}: #{status} #{reason_phrase}"
-        msg << " - #{body}" if body
-
-        msg
+        "#{method.to_s.upcase} #{url}: #{status} #{reason_phrase} - #{body}"
       end
     end
 
