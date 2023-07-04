@@ -2,6 +2,36 @@
 
 module Consulkit
   class Error < StandardError
+
+    def initialize(response)
+      @response = response
+
+      super(error_message)
+    end
+
+    def response_status
+      @response.status
+    end
+
+    def response_headers
+      @response.response_headers
+    end
+
+    def response_body
+      @response.response_body
+    end
+
+    private
+
+    def error_message
+      @response.instance_eval do
+        msg = "#{method.to_s.upcase} #{url}: #{status} #{reason_phrase}"
+        msg << " - #{body}" if body
+
+        msg
+      end
+    end
+
     # Returns the appropriate Consulkit::Error subclass based on the status and
     # response message, or nil if the response is not an error.
     #

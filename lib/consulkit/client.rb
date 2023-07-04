@@ -2,11 +2,13 @@
 
 require 'consulkit/configurable'
 require 'consulkit/client/kv'
+require 'consulkit/client/session'
 
 module Consulkit
   class Client
     include Consulkit::Configurable
     include Consulkit::Client::KV
+    include Consulkit::Client::Session
 
     def initialize(options = {})
       CONFIGURABLE_KEYS.each do |key|
@@ -50,6 +52,10 @@ module Consulkit
       opts['headers']['Authorization'] = "Bearer #{http_token}" if @http_token
 
       @http ||= Faraday.new(http_addr, opts)
+    end
+
+    def camel_case_keys(hash)
+      hash.transform_keys { |k| k.to_s.split('_').collect(&:capitalize).join }
     end
   end
 end
