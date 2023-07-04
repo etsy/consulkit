@@ -12,6 +12,10 @@ group :test do
   gem 'rspec', '~> 3.0'
 end
 
+group :development do
+  gem 'yard'
+end
+
 group :test, :development do
   gem 'bundler', '~> 2.3'
   gem 'rubocop', '~> 1.21'

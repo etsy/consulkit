@@ -10,11 +10,11 @@ module Consulkit
       # @see https://developer.hashicorp.com/consul/api-docs/kv#read-key
       #
       # @param key [String] the key to read.
-      # @param query_params [Hash] Optional query parameters.
-      # @param query_params [Boolean] :recurse
-      # @param query_params [Boolean] :raw
-      # @param query_params [Boolean] :keys
-      # @param query_params [String] :separator
+      # @option query_params [Hash] Optional query parameters.
+      # @option query_params [Boolean] :recurse
+      # @option query_params [Boolean] :raw
+      # @option query_params [Boolean] :keys
+      # @option query_params [String] :separator
       #
       # @raise [Consulkit::Error::NotFound] if the key does not exist.
       #
@@ -36,11 +36,11 @@ module Consulkit
       # @see https://developer.hashicorp.com/consul/api-docs/kv#read-key
       #
       # @param key [String] the key to read.
-      # @param query_params [Hash] Optional query parameters.
-      # @param query_params [Boolean] :recurse
-      # @param query_params [Boolean] :raw
-      # @param query_params [Boolean] :keys
-      # @param query_params [String] :separator
+      # @option query_params [Hash] Optional query parameters.
+      # @option query_params [Boolean] :recurse
+      # @option query_params [Boolean] :raw
+      # @option query_params [Boolean] :keys
+      # @option query_params [String] :separator
       #
       # @yield [Faraday::Response] The response from the underlying Faraday library.
       #
@@ -119,11 +119,11 @@ module Consulkit
       # @see kv_release_lock
       #
       # @param key [String] the key to create or update.
-      # @param query_params [Hash] Optional query parameters.
-      # @param query_params [Integer] :flags
-      # @param query_params [Integer] :cas
-      # @param query_params [String] :acquire
-      # @param query_params [String] :release
+      # @option query_params [Hash] Optional query parameters.
+      # @option query_params [Integer] :flags
+      # @option query_params [Integer] :cas
+      # @option query_params [String] :acquire
+      # @option query_params [String] :release
       #
       # @yield [Faraday::Response] The response from the underlying Faraday library.
       #
