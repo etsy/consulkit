@@ -5,6 +5,7 @@ require 'faraday/retry'
 require 'consulkit/middleware/raise_error'
 
 module Consulkit
+  # Default configuration options for the {Consulkit} singleton and individual {Client} instances.
   module Defaults
 
     HTTP_ADDR = 'http://localhost:8500'
@@ -23,6 +24,7 @@ module Consulkit
     end
 
     class << self
+
       def connection_options
         {}
       end
@@ -38,6 +40,8 @@ module Consulkit
       def middleware
         MIDDLEWARE
       end
+
     end
+
   end
 end

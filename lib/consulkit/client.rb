@@ -5,7 +5,9 @@ require 'consulkit/client/kv'
 require 'consulkit/client/session'
 
 module Consulkit
+  # Client for the Consul API.
   class Client
+
     include Consulkit::Configurable
     include Consulkit::Client::KV
     include Consulkit::Client::Session
@@ -57,5 +59,6 @@ module Consulkit
     def camel_case_keys(hash)
       hash.transform_keys { |k| k.to_s.split('_').collect(&:capitalize).join }
     end
+
   end
 end
