@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email   = ['enorris@etsy.com']
 
   spec.summary  = 'Ruby toolkit for the Consul API'
-  spec.homepage = 'https://github.com/ericnorris/consulkit'
+  spec.homepage = 'https://github.com/etsy/consulkit'
 
   spec.license = 'MIT'
 
