@@ -26,6 +26,7 @@ jobs:
         with:
           release-type: ruby
           package-name: consulkit
+          component   : consulkit
           version-file: "lib/consulkit/version.rb"
 
           bump-minor-pre-major: true
