@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/etsy/consulkit/compare/v0.1.0...v0.1.1) (2023-07-06)
+
+
+### Features
+
+* users can install from rubygems now ([ada4106](https://github.com/etsy/consulkit/commit/ada4106a219893590218119a94666de29f718d4f))
+
 ## 0.1.0 (2023-07-05)
 
 
