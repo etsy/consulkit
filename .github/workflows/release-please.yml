@@ -49,9 +49,18 @@ jobs:
           ruby-version:  3.2
           bundler-cache: true
 
-      - name: Publish gem to GitHub Packages
+      - name: Build gem
         run: |
           gem build consulkit.gemspec --output=consulkit.gem
+
+      - name: Publish gem to rubygems.org
+        run: |
+          gem push consulkit.gem
+        env:
+          GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_API_KEY}}"
+
+      - name: Publish gem to GitHub Packages
+        run: |
           gem push --host "https://rubygems.pkg.github.com/$GITHUB_REPOSITORY_OWNER" consulkit.gem
         env:
           GEM_HOST_API_KEY: "Bearer ${{secrets.GITHUB_TOKEN}}"
