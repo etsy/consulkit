@@ -5,7 +5,7 @@ Ruby API for interacting with HashiCorp's [Consul](https://www.consul.io/), heav
 ## Installation
 
 ```
-gem "consulkit", :git => "git://github.com/ericnorris/consulkit.git"
+gem "consulkit"
 ```
 
 ## Usage
