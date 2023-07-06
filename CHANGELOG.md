@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/etsy/consulkit/compare/v0.1.0...v0.2.0) (2023-07-06)
+
+
+### Features
+
+* publish to rubygems.org ([19ad9d9](https://www.github.com/etsy/consulkit/commit/19ad9d9a39cd17ec7e3f7f409db0f5d9f86e5c08))
+
 ## 0.1.0 (2023-07-05)
 
 
