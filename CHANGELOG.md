@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/etsy/consulkit/compare/v0.1.1...v0.1.2) (2023-07-07)
+
+
+### Bug Fixes
+
+* `/v1/session/destroy` takes a `PUT`, not `DELETE` ([8802e43](https://github.com/etsy/consulkit/commit/8802e43bc8e610bfc7cfbf2944c93f69e116f31f))
+
 ## [0.1.1](https://github.com/etsy/consulkit/compare/v0.1.0...v0.1.1) (2023-07-06)
 
 
