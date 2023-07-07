@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:8500/v1/session/create
+    body:
+      encoding: UTF-8
+      string: '{"LockDelay":"30s"}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.8
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      X-Consul-Default-Acl-Policy:
+      - allow
+      Date:
+      - Fri, 07 Jul 2023 13:52:48 GMT
+      Content-Length:
+      - '53'
+    body:
+      encoding: UTF-8
+      string: |
+        {
+            "ID": "a483eb95-8990-1d4c-0150-69bb4725b593"
+        }
+  recorded_at: Fri, 07 Jul 2023 13:52:48 GMT
+recorded_with: VCR 6.2.0

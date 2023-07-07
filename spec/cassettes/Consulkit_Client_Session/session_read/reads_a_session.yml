@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:8500/v1/session/info/12f39cb5-9b89-e507-f1b6-d39696d13b68
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      X-Consul-Default-Acl-Policy:
+      - allow
+      X-Consul-Index:
+      - '89'
+      X-Consul-Knownleader:
+      - 'true'
+      X-Consul-Lastcontact:
+      - '0'
+      X-Consul-Query-Backend:
+      - blocking-query
+      Date:
+      - Fri, 07 Jul 2023 13:52:48 GMT
+      Content-Length:
+      - '343'
+    body:
+      encoding: UTF-8
+      string: |
+        [
+            {
+                "ID": "12f39cb5-9b89-e507-f1b6-d39696d13b68",
+                "Name": "",
+                "Node": "10143",
+                "LockDelay": 15000000000,
+                "Behavior": "release",
+                "TTL": "",
+                "NodeChecks": [
+                    "serfHealth"
+                ],
+                "ServiceChecks": null,
+                "CreateIndex": 88,
+                "ModifyIndex": 88
+            }
+        ]
+  recorded_at: Fri, 07 Jul 2023 13:52:48 GMT
+recorded_with: VCR 6.2.0

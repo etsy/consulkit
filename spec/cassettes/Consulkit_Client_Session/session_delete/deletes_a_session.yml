@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:8500/v1/session/destroy/12f39cb5-9b89-e507-f1b6-d39696d13b68
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.8
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      X-Consul-Default-Acl-Policy:
+      - allow
+      Date:
+      - Fri, 07 Jul 2023 13:52:48 GMT
+      Content-Length:
+      - '5'
+    body:
+      encoding: UTF-8
+      string: 'true
+
+        '
+  recorded_at: Fri, 07 Jul 2023 13:52:48 GMT
+- request:
+    method: put
+    uri: http://localhost:8500/v1/session/destroy/a483eb95-8990-1d4c-0150-69bb4725b593
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.8
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      X-Consul-Default-Acl-Policy:
+      - allow
+      Date:
+      - Fri, 07 Jul 2023 13:52:48 GMT
+      Content-Length:
+      - '5'
+    body:
+      encoding: UTF-8
+      string: 'true
+
+        '
+  recorded_at: Fri, 07 Jul 2023 13:52:48 GMT
+recorded_with: VCR 6.2.0

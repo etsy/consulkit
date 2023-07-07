@@ -32,16 +32,16 @@ module Consulkit
       #
       # @return [Boolean]
       def session_delete(session_id)
-        delete("/v1/session/destroy/#{session_id}").body == true
+        put("/v1/session/destroy/#{session_id}").body == true
       end
 
       # Reads a session.
       #
       # @param session_id [String] the ID of the session to read.
       #
-      # @return [Boolean]
+      # @return [Hash]
       def session_read(session_id)
-        get("/v1/session/info/#{session_id}").body
+        get("/v1/session/info/#{session_id}").body.first
       end
 
       # Renews a session.
@@ -50,7 +50,7 @@ module Consulkit
       #
       # @return [Hash]
       def session_renew(session_id)
-        put("/v1/session/renew/#{session_id}").body
+        put("/v1/session/renew/#{session_id}").body.first
       end
 
     end
