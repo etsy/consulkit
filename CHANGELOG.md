@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/etsy/consulkit/compare/v0.1.2...v0.2.0) (2024-06-06)
+
+
+### Features
+
+* add "List Service Instances for Service" call ([#8](https://github.com/etsy/consulkit/issues/8)) ([d115001](https://github.com/etsy/consulkit/commit/d1150019c98de693e9815c68b1ea0426c850ffad))
+
 ## [0.1.2](https://github.com/etsy/consulkit/compare/v0.1.1...v0.1.2) (2023-07-07)
 
 
