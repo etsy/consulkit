@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:8500/v1/health/service/consul
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      X-Consul-Default-Acl-Policy:
+      - allow
+      X-Consul-Effective-Consistency:
+      - leader
+      X-Consul-Index:
+      - '14'
+      X-Consul-Knownleader:
+      - 'true'
+      X-Consul-Lastcontact:
+      - '0'
+      X-Consul-Query-Backend:
+      - blocking-query
+      Date:
+      - Thu, 06 Jun 2024 18:19:30 GMT
+      Content-Length:
+      - '2179'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        [
+            {
+                "Node": {
+                    "ID": "e0271afe-ff0c-d82f-8808-cbafde23b2bd",
+                    "Node": "localhost",
+                    "Address": "127.0.0.1",
+                    "Datacenter": "dc1",
+                    "TaggedAddresses": {
+                        "lan": "127.0.0.1",
+                        "lan_ipv4": "127.0.0.1",
+                        "wan": "127.0.0.1",
+                        "wan_ipv4": "127.0.0.1"
+                    },
+                    "Meta": {
+                        "consul-network-segment": "",
+                        "consul-version": "1.16.4"
+                    },
+                    "CreateIndex": 13,
+                    "ModifyIndex": 14
+                },
+                "Service": {
+                    "ID": "consul",
+                    "Service": "consul",
+                    "Tags": [],
+                    "Address": "",
+                    "Meta": {
+                        "grpc_port": "8502",
+                        "grpc_tls_port": "8503",
+                        "non_voter": "false",
+                        "raft_version": "3",
+                        "read_replica": "false",
+                        "serf_protocol_current": "2",
+                        "serf_protocol_max": "5",
+                        "serf_protocol_min": "1",
+                        "version": "1.16.4"
+                    },
+                    "Port": 8300,
+                    "Weights": {
+                        "Passing": 1,
+                        "Warning": 1
+                    },
+                    "EnableTagOverride": false,
+                    "Proxy": {
+                        "Mode": "",
+                        "MeshGateway": {},
+                        "Expose": {}
+                    },
+                    "Connect": {},
+                    "PeerName": "",
+                    "CreateIndex": 13,
+                    "ModifyIndex": 13
+                },
+                "Checks": [
+                    {
+                        "Node": "localhost",
+                        "CheckID": "serfHealth",
+                        "Name": "Serf Health Status",
+                        "Status": "passing",
+                        "Notes": "",
+                        "Output": "Agent alive and reachable",
+                        "ServiceID": "",
+                        "ServiceName": "",
+                        "ServiceTags": [],
+                        "Type": "",
+                        "Interval": "",
+                        "Timeout": "",
+                        "ExposedPort": 0,
+                        "Definition": {},
+                        "CreateIndex": 13,
+                        "ModifyIndex": 13
+                    }
+                ]
+            }
+        ]
+  recorded_at: Thu, 06 Jun 2024 18:19:30 GMT
+recorded_with: VCR 6.2.0
