@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'consulkit/configurable'
+require 'consulkit/client/health'
 require 'consulkit/client/kv'
 require 'consulkit/client/session'
 
@@ -9,6 +10,7 @@ module Consulkit
   class Client
 
     include Consulkit::Configurable
+    include Consulkit::Client::Health
     include Consulkit::Client::KV
     include Consulkit::Client::Session
 
